@@ -1,0 +1,12 @@
+<template name="postList">
+  <ul class="thumbnails">
+    {{#each allPosts}}
+    <li class="span2">
+      <a href="/posts/{{_id}}">
+        <h3>{{title}}</h3>
+      </a> 
+      <p>{{body}}</p>
+    </li>
+    {{/each}}
+  </ul>
+</template>
