@@ -1,0 +1,19 @@
+<template name="adminPostList">
+  <div class="row">
+    <div class="span2">
+      {{> adminNav}}
+    </div>
+    <div class="span10">
+      <a href="/admin/posts/new" class="btn btn-success new-post pull-right"><i class="icon-plus"></i> New Post</a>
+      <table class="table">
+        <thead>
+        </thead>
+        <tbody>
+        {{#each allPosts}}
+          {{> adminPostListItem}}
+        {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</template>

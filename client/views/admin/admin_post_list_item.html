@@ -1,0 +1,12 @@
+<template name="adminPostListItem">
+  <tr>
+    <td>
+      <a href="/admin/posts/{{_id}}">
+        {{title}}
+      </a>
+    </td>
+    <td>{{body}}</td>
+    <td>{{#if published}}Published{{else}}Draft{{/if}}</td>
+    <td><a href="#" class="delete">Delete</a></td>
+  </tr>
+</template>

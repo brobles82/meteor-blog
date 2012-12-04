@@ -1,0 +1,37 @@
+<template name="adminPostDetail">
+  <form class="form-inline">
+    <input class="span4 post-title" type="text" name="title" value="{{post.title}}" placeholder="Post title" required="true">
+    <button class="btn publish btn-primary">
+      {{#if isPublished}}
+        Update
+      {{else}}
+        Publish
+      {{/if}}
+    </button>
+    <button class="btn save {{#if isDirty}}btn-success{{/if}}">Save</button>
+    <button class="btn cancel">Close</button>
+  </form>
+  <div class="row">
+    <div class="span9">
+      <textarea class="post-body" placeholder="Enter your text ..." 
+        style="width: 800px; height: 600px;">{{post.body}}</textarea>
+    </div>
+    <div class="span3">
+      <h3>Post Settings</h3>
+      <ul class="unstyled">
+        <li>
+          <h4><i class="icon-tag"></i> Tags</h4>
+        </li>
+        <li>
+          <h4><i class="icon-lock"></i> Permalink</h4>
+          <input class="span4 post-slug" type="text" value="{{slug}}" placeholder="Permalink" required="true">
+        </li>
+        <li>
+          <h4><i class="icon-cog"></i> Options</h4>
+        </li>
+      </ul>
+    </div>
+  </div>
+  </div>
+</template>
+
