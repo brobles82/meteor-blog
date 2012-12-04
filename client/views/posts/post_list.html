@@ -1,12 +1,19 @@
 <template name="postList">
-  <ul class="thumbnails">
-    {{#each allPosts}}
-    <li class="span2">
-      <a href="/posts/{{_id}}">
-        <h3>{{title}}</h3>
-      </a> 
-      <p>{{body}}</p>
-    </li>
-    {{/each}}
-  </ul>
+  <div class="row">
+    <div class="span10">
+      <ul class="thumbnails">
+        {{#each allPosts}}
+        <li class="span10">
+          <a href="/posts/{{_id}}">
+            <h3>{{title}}</h3>
+          </a> 
+          <p>{{body}}</p>
+        </li>
+        {{/each}}
+      </ul>
+    </div>
+    <div class="span2">
+      {{> postSidebar}}
+    </div>
+  </div>
 </template>
