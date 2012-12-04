@@ -13,14 +13,18 @@
         </div>
         <div class="span9">
           <ul class="nav nav-pills nav-main">
-            <li class="{{isActiveTop "home"}}"><a class="nav-link" href="/">Home</a></li>
-            <li class="{{isActiveTop "postList|postDetail"}}"><a class="nav-link" href="/posts">Posts</a></li>
-            <li class="{{isActiveTop "adminHome"}}"><a class="nav-link" href="/admin">Admin</a></li>
+            <li class="{{isActiveTop 'home'}}"><a class="nav-link" href="/">Home</a></li>
+            <li class="{{isActiveTop 'postList|postDetail'}}"><a class="nav-link" href="/posts">Posts</a></li>
+            <li class="{{isActiveTop 'adminHome'}}"><a class="nav-link" href="/admin">Admin</a></li>
+            <li>
+              <a href="#">{{loginButtons align="right"}}</a>
+            </li>
           </ul>
         </div>
       </div>
     </div>
     <div class="content">
+      {{> errors}}
       {{renderPage}}
     </div>
   </div>
