@@ -90,7 +90,7 @@ Template.adminPostDetail.events({
     }
 
     // Pass the values the 'createPost' function the server
-    Meteor.call(method, post, function (err, post) {
+    Meteor.call(method, post, function (err, id) {
       if (err) {
         return throwError(err.reason);
       }
@@ -125,9 +125,13 @@ Template.adminPostDetail.events({
     }
 
     // Pass the values the 'createPost' function the server
-    Meteor.call(method, post, function (err, post) {
+    Meteor.call(method, post, function (err, id) {
       if (err) {
         return throwError(err.reason);
+      }
+      // if the post is new redirect to the correct url
+      if (Session.get('postIsNew')) {
+        Meteor.Router.to('/admin/posts/' + id);
       }
       // if no error...
       Session.set('postIsDirty', false);
