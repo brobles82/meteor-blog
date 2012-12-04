@@ -1,1 +1,4 @@
 /* CSS declarations go here */
+#login-buttons a, .accounts-dialog a {
+  text-decoration: none;
+}
